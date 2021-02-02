@@ -6,7 +6,7 @@
     ViewBag.Title = "Movies";
 }
 
-<h2>Films</h2>
+<h2>Movies</h2>
 @*User can not acces the add link without being logged in *@
 @if (ViewBag.email != "not logged in")
 {
@@ -15,7 +15,7 @@
 </p>
 }
 @*Adds the search box *@
-@using (Html.BeginForm("Index", "Movies", FormMethod.Get))
+@using (Html.BeginForm("Index", "Films", FormMethod.Get))
 {
     <p>
         Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
@@ -29,6 +29,9 @@
             @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
         </th>
         <th>
+            Year
+        </th>
+        <th>
             Genre
         </th>
         <th>
@@ -36,9 +39,6 @@
         </th>
         <th>
             Director
-        </th>
-        <th>
-            Year
         </th>
         <th>
             Description
@@ -49,13 +49,18 @@
         <th>
             @Html.ActionLink("IMDB Rating", "Index", new { sortOrder = ViewBag.NumSortParm, currentFilter = ViewBag.CurrentFilter })
         </th>
-        <th></th>
+        <th>
+            Actions
+        </th>
     </tr>
 
 @foreach (var item in Model) {
 <tr>
     <td>
         @Html.DisplayFor(modelItem => item.Movie)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Year)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Genre.genre)
@@ -65,9 +70,6 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Director.Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Year)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Description)
@@ -82,14 +84,15 @@
     <td>
         @if (ViewBag.email != "not logged in")
         {
+        @Html.ActionLink("Edit", "Edit", new { id = item.FilmId })
+        } |
 
-@Html.ActionLink("Edit", "Edit", new { id = item.FilmId })}
-
-        @Html.ActionLink("Details", "Details", new { id = item.FilmId })
+        @Html.ActionLink("Details", "Details", new { id = item.FilmId }) |
 
         @if (ViewBag.email != "not logged in")
         {
-@Html.ActionLink("Delete", "Delete", new { id = item.FilmId })}
+        @Html.ActionLink("Delete", "Delete", new { id = item.FilmId })
+        }
     </td>
 </tr>
 }

@@ -945,3 +945,4 @@ D:\IP2020\RunnersFilmMVC\obj\Debug\RunnersFilmMVC.csproj.CoreCompileInputs.cache
 D:\IP2020\RunnersFilmMVC\obj\Debug\RunnersFilmMVC.csproj.CopyComplete
 D:\IP2020\RunnersFilmMVC\obj\Debug\RunnersFilmMVC.dll
 D:\IP2020\RunnersFilmMVC\obj\Debug\RunnersFilmMVC.pdb
+D:\IP2020\RunnersFilmMVC\obj\Debug\RunnersFilmMVC.csprojAssemblyReference.cache

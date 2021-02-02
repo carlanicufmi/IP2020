@@ -38,7 +38,9 @@
         <th>
             Description
         </th>
-        <th></th>
+        <th>
+            Actions
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -60,14 +62,14 @@
             @if (ViewBag.email != "not logged in")
             { 
             @Html.ActionLink("Edit", "Edit", new { id=item.DirectorId }) 
-            }
+            } |
 
-            @Html.ActionLink("Details", "Details", new { id=item.DirectorId }) 
+            @Html.ActionLink("Details", "Details", new { id=item.DirectorId }) |
 
-        @if (ViewBag.email != "not logged in")
-        {
+            @if (ViewBag.email != "not logged in")
+            {
             @Html.ActionLink("Delete", "Delete", new { id = item.DirectorId })
-        }
+            }
         </td>
     </tr>
 }
