@@ -1,0 +1,13 @@
+﻿
+@{ ViewBag.Title = "Index"; }
+
+
+<h2>Achievements</h2>
+@*If user is not logged in then ask him to log in*@
+@if (ViewBag.email == "not logged in")
+{
+<p>Please Login to View Achivements</p> } @*If user is logged in teh grant him access to the page*@
+
+@if (ViewBag.email != "not logged in")
+{
+<p>Here we will insert the achievements</p>}

@@ -9,11 +9,15 @@ namespace RunnersFilmMVC.Models
     public class Review
     {
         public virtual int ReviewId { get; set; }
+        [Required(ErrorMessage = "Movie Name Is Required")]
+        public virtual int FilmId { get; set; }
         [Required(ErrorMessage = "Name Is Required")]
         [StringLength(50)]
         public virtual string Name { get; set; }
         [Required(ErrorMessage = "Comment Is Required")]
         [StringLength(200)]
         public virtual string Comment { get; set; }
+
+        public virtual Film Film { get; set; }
     }
 }

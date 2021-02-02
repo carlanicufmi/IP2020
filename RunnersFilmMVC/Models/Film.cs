@@ -26,17 +26,16 @@ namespace RunnersFilmMVC.Models
         
         public virtual int GenreId { get; set; }
         
-
         public virtual Genre Genre { get; set; }
         
         public virtual int ActorId { get; set; }
         
-
         public virtual Actor Actor { get; set; }
 
         public virtual int DirectorId { get; set; }
         
-
         public virtual Director Director { get; set; }
+
+        public virtual ICollection<Review> Reviews { get; set; }
     }
 }

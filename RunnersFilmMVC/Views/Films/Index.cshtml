@@ -35,19 +35,13 @@
             Genre
         </th>
         <th>
-            Actor
-        </th>
-        <th>
-            Director
-        </th>
-        <th>
-            Description
-        </th>
-        <th>
-            Duration
+            Synopsis
         </th>
         <th>
             @Html.ActionLink("IMDB Rating", "Index", new { sortOrder = ViewBag.NumSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            Reviews
         </th>
         <th>
             Actions
@@ -66,19 +60,13 @@
         @Html.DisplayFor(modelItem => item.Genre.genre)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Actor.Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Director.Name)
-    </td>
-    <td>
         @Html.DisplayFor(modelItem => item.Description)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Duration)
+        @Html.DisplayFor(modelItem => item.Rating)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Rating)
+        @Html.DisplayFor(modelItem => item.Reviews.Count)
     </td>
     @*User can not acces the add link without being logged in *@
     <td>

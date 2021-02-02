@@ -55,6 +55,7 @@ namespace RunnersFilmMVC.Controllers
         // GET: Reviews/Create
         public ActionResult Create()
         {
+            ViewBag.FilmId = new SelectList(db.Films, "FilmId", "Movie");
             return View();
         }
 
@@ -63,7 +64,7 @@ namespace RunnersFilmMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ReviewId,Name,Comment")] Review review)
+        public ActionResult Create([Bind(Include = "ReviewId,FilmId,Name,Comment")] Review review)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +96,7 @@ namespace RunnersFilmMVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ReviewId,Name,Comment")] Review review)
+        public ActionResult Edit([Bind(Include = "ReviewId,FilmId,Name,Comment")] Review review)
         {
             if (ModelState.IsValid)
             {

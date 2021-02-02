@@ -22,10 +22,16 @@
 <table class="table">
     <tr>
         <th>
-            Title
+            Movie
+        </th>
+        <th>
+            Review Title
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        <th>
+            Likes
         </th>
         <th>
             Actions
@@ -33,20 +39,30 @@
     </tr>
 
 @foreach (var item in Model)
-{
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comment)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ReviewId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ReviewId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ReviewId })
-        </td>
-    </tr>
+{    
+        Random rnd = new Random();
+        // This will return either 1 or 2 randomly.
+        int question = rnd.Next(1, 99);
+    
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Film.Movie)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Comment)
+    </td>
+    <td>
+        @question
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ReviewId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ReviewId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ReviewId })
+    </td>
+</tr>
 }
 
 </table>

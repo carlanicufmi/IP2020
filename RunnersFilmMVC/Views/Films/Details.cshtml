@@ -65,6 +65,33 @@
         <dd>
             @Html.DisplayFor(model => model.Rating)
         </dd>
+
+        <dt>
+            Reviews
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Review Title</th>
+                    <th>Comment</th>
+                    <th>Likes</th>
+                </tr>
+                @foreach (var item in Model.Reviews)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comment)
+                    </td>
+                    <td>
+                        5
+                    </td>
+                </tr>}
+            </table>
+        </dd>
+
     </dl>
 </div>
 <p>
