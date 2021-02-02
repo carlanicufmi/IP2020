@@ -75,7 +75,7 @@ namespace RunnersFilmMVC.Controllers
                     break;
             }
 
-            int pageSize = 3;
+            int pageSize = 10;
             int pageNumber = (page ?? 1);
             //this code displays all the data on to the browser
             var films = db.Films.Include(f => f.Actor).Include(f => f.Director).Include(f => f.Genre);

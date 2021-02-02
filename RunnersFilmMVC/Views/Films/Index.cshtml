@@ -3,7 +3,7 @@
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
-    ViewBag.Title = "Films";
+    ViewBag.Title = "Movies";
 }
 
 <h2>Films</h2>
@@ -15,7 +15,7 @@
 </p>
 }
 @*Adds the search box *@
-@using (Html.BeginForm("Index", "Films", FormMethod.Get))
+@using (Html.BeginForm("Index", "Movies", FormMethod.Get))
 {
     <p>
         Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
@@ -47,53 +47,51 @@
             Duration
         </th>
         <th>
-            @Html.ActionLink("Rating", "Index", new { sortOrder = ViewBag.NumSortParm, currentFilter = ViewBag.CurrentFilter })
+            @Html.ActionLink("IMDB Rating", "Index", new { sortOrder = ViewBag.NumSortParm, currentFilter = ViewBag.CurrentFilter })
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Actor.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Director.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Genre.genre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Movie)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Year)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Duration)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rating)
-        </td>
-        @*User can not acces the add link without being logged in *@
-        <td>
-           @if (ViewBag.email != "not logged in")
-           {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Movie)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Genre.genre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Actor.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Director.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Year)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Duration)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Rating)
+    </td>
+    @*User can not acces the add link without being logged in *@
+    <td>
+        @if (ViewBag.email != "not logged in")
+        {
 
-            @Html.ActionLink("Edit", "Edit", new { id = item.FilmId })
-           }
+@Html.ActionLink("Edit", "Edit", new { id = item.FilmId })}
 
-            @Html.ActionLink("Details", "Details", new { id = item.FilmId })
+        @Html.ActionLink("Details", "Details", new { id = item.FilmId })
 
-             @if (ViewBag.email != "not logged in")
-            {
-             @Html.ActionLink("Delete", "Delete", new { id = item.FilmId })
-             }
-        </td>
-    </tr>
+        @if (ViewBag.email != "not logged in")
+        {
+@Html.ActionLink("Delete", "Delete", new { id = item.FilmId })}
+    </td>
+</tr>
 }
 
 </table>

@@ -939,7 +939,6 @@ D:\IP2020\RunnersFilmMVC\bin\Microsoft.Owin.Security.OAuth.xml
 D:\IP2020\RunnersFilmMVC\bin\Microsoft.Owin.Security.Google.xml
 D:\IP2020\RunnersFilmMVC\bin\Microsoft.Owin.Security.Twitter.xml
 D:\IP2020\RunnersFilmMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\IP2020\RunnersFilmMVC\obj\Debug\RunnersFilmMVC.csprojAssemblyReference.cache
 D:\IP2020\RunnersFilmMVC\obj\Debug\RunnersFilmMVC.Properties.Resources.resources
 D:\IP2020\RunnersFilmMVC\obj\Debug\RunnersFilmMVC.csproj.GenerateResource.cache
 D:\IP2020\RunnersFilmMVC\obj\Debug\RunnersFilmMVC.csproj.CoreCompileInputs.cache
