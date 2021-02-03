@@ -1457,6 +1457,7 @@ dd {
 }
 @media (min-width: 768px) {
   .dl-horizontal dt {
+      padding-top: 10px;
     float: left;
     width: 160px;
     clear: left;
@@ -1466,6 +1467,7 @@ dd {
     white-space: nowrap;
   }
   .dl-horizontal dd {
+      padding-top: 10px;
     margin-left: 180px;
   }
 }

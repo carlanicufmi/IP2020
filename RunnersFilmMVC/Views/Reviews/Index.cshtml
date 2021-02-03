@@ -54,7 +54,8 @@
         @Html.DisplayFor(modelItem => item.Name)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Comment)
+        @Html.DisplayFor(modelItem => item.Comment).ToString().Substring(0, 35)
+        [...]
     </td>
     <td>
         @likes

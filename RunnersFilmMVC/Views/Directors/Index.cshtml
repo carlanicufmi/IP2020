@@ -55,9 +55,10 @@
             @Html.DisplayFor(modelItem => item.Age)
         </td>
         @*User can not acces the add link without being logged in *@
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Description).ToString().Substring(0, 35)
+        [...]
+    </td>
         <td>
             @if (ViewBag.email != "not logged in")
             { 

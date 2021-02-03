@@ -221,7 +221,6 @@ namespace RunnersFilmMVC.Models
             Director10.Gender = "Female";
             context.Directors.Add(Director10);
 
-
             Director Director11 = new Director();
             Director11.DirectorId = 11;
             Director11.Name = "Thomas Gray";
@@ -234,9 +233,9 @@ namespace RunnersFilmMVC.Models
             Film1.FilmId = 1;
             Film1.Movie = "Moonlight";
             Film1.Duration = "1h 30m";
-            Film1.Description = "Movie was made in 2017.";
-            Film1.Rating = 8;
-            Film1.Year = 2017;
+            Film1.Description = "A young African-American man grapples with his identity and sexuality while experiencing the everyday struggles of childhood, adolescence, and burgeoning adulthood.";
+            Film1.Rating = 7;
+            Film1.Year = 2016;
             Film1.Genre = Genre1;
             Film1.Actor = Actor1;
             Film1.Director = Director1;

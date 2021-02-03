@@ -55,7 +55,8 @@
             @Html.DisplayFor(modelItem => item.Age)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
+            @Html.DisplayFor(modelItem => item.Description).ToString().Substring(0, 35)
+            [...]
         </td>
         @*User can not acces the add link without being logged in *@
         <td>
