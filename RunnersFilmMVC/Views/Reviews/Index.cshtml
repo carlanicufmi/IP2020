@@ -31,7 +31,10 @@
             @Html.DisplayNameFor(model => model.Comment)
         </th>
         <th>
-            Likes
+            👍
+        </th>
+        <th>
+            Like
         </th>
         <th>
             Actions
@@ -39,11 +42,10 @@
     </tr>
 
 @foreach (var item in Model)
-{    
-        Random rnd = new Random();
-        // This will return either 1 or 2 randomly.
-        int question = rnd.Next(1, 99);
-    
+{
+    Random rnd = new Random();
+    int number = rnd.Next(1, 32);
+    int likes = number * item.FilmId;
 <tr>
     <td>
         @Html.DisplayFor(modelItem => item.Film.Movie)
@@ -55,7 +57,10 @@
         @Html.DisplayFor(modelItem => item.Comment)
     </td>
     <td>
-        @question
+        @likes
+    </td>
+    <td>
+        @Html.ActionLink("Like!", "Like", new { id = item.ReviewId })
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.ReviewId }) |

@@ -37,7 +37,8 @@ namespace RunnersFilmMVC.Controllers
             //this code lets the user to sort the films and the ratings for the films
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewBag.NumSortParm = sortOrder == "Num" ? "num_desc" : "Num";
+            ViewBag.NumSortParm = sortOrder == "rating" ? "rating_desc" : "rating";
+            ViewBag.ReviewSortParam = sortOrder == "review" ? "review_desc" : "review";
 
             //this code is used to make pages for the films webpage
             if (searchString != null)
@@ -64,11 +65,17 @@ namespace RunnersFilmMVC.Controllers
                 case "name_desc":
                     students = students.OrderByDescending(f => f.Movie);
                     break;
-                case "Num":
+                case "rating":
                     students = students.OrderBy(s => s.Rating);
                     break;
-                case "num_desc":
+                case "rating_desc":
                     students = students.OrderByDescending(s => s.Rating);
+                    break;
+                case "review":
+                    students = students.OrderBy(s => s.Reviews.Count);
+                    break;
+                case "review_desc":
+                    students = students.OrderByDescending(S => S.Reviews.Count);
                     break;
                 default:
                     students = students.OrderBy(f => f.Movie);

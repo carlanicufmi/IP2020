@@ -45,18 +45,22 @@
             <table class="table">
                 <tr>
                     <th>Movie Name</th>
+                    <th>Year</th>
                     <th>Genre</th>
                 </tr>
                 @foreach (var item in Model.Films)
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Movie)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Genre.genre)
-                        </td>
-                    </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Movie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre.genre)
+                </td>
+            </tr>
                 }
             </table>
         </dd>

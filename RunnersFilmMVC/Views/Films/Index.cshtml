@@ -41,7 +41,7 @@
             @Html.ActionLink("IMDB Rating", "Index", new { sortOrder = ViewBag.NumSortParm, currentFilter = ViewBag.CurrentFilter })
         </th>
         <th>
-            Reviews
+            @Html.ActionLink("Review", "Index", new { sortOrder = ViewBag.ReviewSortParam, currentFilter = ViewBag.CurrentFilter })
         </th>
         <th>
             Actions
@@ -62,10 +62,10 @@
     <td>
         @Html.DisplayFor(modelItem => item.Description)
     </td>
-    <td>
+    <td style="text-align: center;">
         @Html.DisplayFor(modelItem => item.Rating)
     </td>
-    <td>
+    <td style="text-align: center;">
         @Html.DisplayFor(modelItem => item.Reviews.Count)
     </td>
     @*User can not acces the add link without being logged in *@

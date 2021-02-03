@@ -74,10 +74,14 @@
                 <tr>
                     <th>Review Title</th>
                     <th>Comment</th>
-                    <th>Likes</th>
+                    <th>👍</th>
+                    <th>Like</th>
                 </tr>
                 @foreach (var item in Model.Reviews)
                 {
+                    Random rnd = new Random();
+                    int number = rnd.Next(1, 32);
+                    int likes = number * item.FilmId;
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
@@ -86,7 +90,10 @@
                         @Html.DisplayFor(modelItem => item.Comment)
                     </td>
                     <td>
-                        5
+                        @likes
+                    </td>
+                    <td>
+                        @Html.ActionLink("Like!", "Like", new { id = item.ReviewId })
                     </td>
                 </tr>}
             </table>
